@@ -1,2 +1,2 @@
-# AkakraftHomepage
-The homepage of the Akakraft Darmstadt e.V.
+# Akakraft
+The homepage and more of the Akakraft Darmstadt e.V.
