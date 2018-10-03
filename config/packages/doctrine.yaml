@@ -31,3 +31,8 @@ doctrine:
                 type: annotation
                 dir: '%kernel.project_dir%/src/AccessSystem/Entities'
                 prefix: 'Akakraft\AccessSystem\Entities'
+            UserManagement:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/src/UserManagement/Entities'
+                prefix: 'Akakraft\UserManagement\Entities'
