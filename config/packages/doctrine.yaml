@@ -21,3 +21,8 @@ doctrine:
         naming_strategy: doctrine.orm.naming_strategy.default
         auto_mapping: true
         mappings:
+            UserManagement:
+                is_bundle: false
+                type: annotation
+                dir: '%kernel.project_dir%/src/UserManagement/Entities'
+                prefix: 'Akakraft\UserManagement\Entities'
