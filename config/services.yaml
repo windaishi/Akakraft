@@ -13,3 +13,8 @@ services:
         public: false       # Allows optimizing the container by removing unused services; this also means
                             # fetching services directly from the container via $container->get() won't work.
                             # The best practice is to be explicit about your dependencies anyway.
+
+    accessSystem:
+        class:     Akakraft\AccessSystem\AccessSystemService
+        public:    true
+        arguments: [ "@doctrine.orm.entity_manager" ]
