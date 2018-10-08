@@ -56,6 +56,7 @@ class UserClubHistoryEntry
     public function __construct(User $user, string $event, \DateTime $date)
     {
         $this->user = $user;
+        $this->user->addClubHistoryEntry($this);
         $this->event = $event;
         $this->date = $date;
     }

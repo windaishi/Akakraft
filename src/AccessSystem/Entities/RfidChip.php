@@ -3,6 +3,7 @@ namespace Akakraft\AccessSystem\Entities;
 
 use Akakraft\UserManagement\Entities\User;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 
 /**
  * @ORM\Entity

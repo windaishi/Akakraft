@@ -27,7 +27,7 @@ class Machine
      * @ORM\Column(type="string", unique=true)
      * @var string
      */
-    private $accessToken;
+    private $identifier;
 
     /**
      * @param string $name
@@ -35,7 +35,7 @@ class Machine
     public function __construct(string $name)
     {
         $this->name = $name;
-        $this->recreateAccessToken();
+        $this->recreateIdentifier();
     }
 
     /**
@@ -65,13 +65,13 @@ class Machine
     /**
      * @return string
      */
-    public function getAccessToken(): string
+    public function getIdentifier(): string
     {
-        return $this->accessToken;
+        return $this->identifier;
     }
 
-    public function recreateAccessToken(): void
+    public function recreateIdentifier(): void
     {
-        $this->accessToken = hash('sha256', random_bytes(256));
+        $this->identifier = hash('sha256', random_bytes(256));
     }
 }

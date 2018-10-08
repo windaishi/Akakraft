@@ -16,9 +16,10 @@ class User implements UserInterface
     public const SEX_FEMALE = 'weiblich';
     public const SEX_OTHER = 'anderes';
 
-    public const ROLE_ADMINISTRATOR = 'Administrator';
-    public const ROLE_USER_ADMINISTRATOR = 'Benutzeradministrator';
-    public const ROLE_HALL_ADMINISTRATOR = 'Hallenadministrator';
+    public const ROLE_ADMINISTRATOR = 'ROLE_ADMINISTRATOR';
+    public const ROLE_USER_ADMINISTRATOR = 'ROLE_USER_ADMINISTRATOR';
+    public const ROLE_HALL_ADMINISTRATOR = 'ROLE_HALL_ADMINISTRATOR';
+    public const ROLE_USER = 'ROLE_USER';
 
     public const FUNCTION_HALL_ATTENDANT = 'Hallenwart';
     public const FUNCTION_CLUB_COMMITTEE = 'Vorstand';
@@ -407,11 +408,12 @@ class User implements UserInterface
      */
     public function getRoles(): array
     {
+        $roles = [self::ROLE_USER];
         if ($this->isAdministrator()) {
-            return [self::ROLE_ADMINISTRATOR];
+            $roles[] = self::ROLE_ADMINISTRATOR;
         }
 
-        return [];
+        return $roles;
     }
 
     /**

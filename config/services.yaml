@@ -18,3 +18,7 @@ services:
         class:     Akakraft\AccessSystem\AccessSystemService
         public:    true
         arguments: [ "@doctrine.orm.entity_manager" ]
+    rfidUidAuthenticator:
+        class: Akakraft\AccessSystem\Authentication\RfidUidAuthenticator
+        public: true
+        arguments: [ "@doctrine.orm.entity_manager" ]

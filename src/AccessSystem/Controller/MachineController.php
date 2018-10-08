@@ -3,19 +3,20 @@ namespace Akakraft\AccessSystem\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 class MachineController extends Controller
 {
     /**
-     * @Route("/api/machine/privilege")
+     * @Route("/api/accessSystem/getPrivilege")
      */
-    public function hasPrivileges(): JsonResponse
+    public function getPrivilege(Request $request): JsonResponse
     {
-        $this->get('accessSystem');
+        $machineIdentifier = $request->get('machineIdentifier');
 
         return new JsonResponse([
-            'success' => true,
+            'user' => $this->getUser(),
         ]);
     }
 }
